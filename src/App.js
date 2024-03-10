@@ -1,4 +1,5 @@
 import "./App.css";
+import Submit from "./components/Submit"
 
 function App() {
   return (
@@ -6,9 +7,11 @@ function App() {
       <div className="urlShort">
         <div className="urlShortBox">
           <h4>Simplify your links, enter your link here.</h4>
-          <div className="urlLinkBox">
-            
-          </div>
+          {/* Find a way to redirect this to a script which will be accessed in the server.*/}
+            <form formAction="" className="urlLinkBox">
+              <input className="linkInput"/>
+              <Submit/>
+            </form>
         </div>
         <div className="urlExplain">
           <h3>
