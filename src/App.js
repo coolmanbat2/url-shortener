@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="urlShort">
+        <div className="urlShortBox">
+          <h4>Simplify your links, enter your link here.</h4>
+          <div className="urlLinkBox">
+            
+          </div>
+        </div>
+        <div className="urlExplain">
+          <h3>
+            Better be on the toilet then not be on the toilet and have to go
+          </h3>
+          <p>
+            We'll begin by talking about how it means to waste soap. The liquid
+            soap is a nice idea for the house. We can talk about random things
+            while watching two and a half men. With this show we are able to see
+            new things that do not manage to keep themselves the same as they
+            always are if you know what I mean.
+          </p>
+          <p>
+            This sentence is on a run-on sentence. The random words that are
+            typed in this paragraph provides us with a representation of how the
+            world will truly feel from there.
+          </p>
+        </div>
+      </div>
+      <div className="picture"></div>
     </div>
   );
 }
