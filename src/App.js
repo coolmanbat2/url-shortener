@@ -1,5 +1,6 @@
 import "./App.css";
-import Submit from "./components/Submit"
+import Submit from "./components/submit/Submit";
+import forest from "./assets/forest.jpg" 
 
 function App() {
   return (
@@ -7,11 +8,10 @@ function App() {
       <div className="urlShort">
         <div className="urlShortBox">
           <h4>Simplify your links, enter your link here.</h4>
-          {/* Find a way to redirect this to a script which will be accessed in the server.*/}
-            <form formAction="" className="urlLinkBox">
-              <input className="linkInput"/>
-              <Submit/>
-            </form>
+          <form formAction="" className="urlLinkBox">
+            <input className="linkInput" />
+            <Submit />
+          </form>
         </div>
         <div className="urlExplain">
           <h3>
@@ -30,8 +30,8 @@ function App() {
             world will truly feel from there.
           </p>
         </div>
+        <img className="picture" src={forest} alt="forest"></img>
       </div>
-      <div className="picture"></div>
     </div>
   );
 }
