@@ -8,6 +8,9 @@
   background-color: #7aa66d;
 }
 
+.centerText {
+}
+
 .urlShortBox {
   grid-row-start: 1;
   grid-row-end: 2;
@@ -22,6 +25,7 @@
   grid-column-start: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  max-width: 100vw;
-  height: 100vh
+  width: 65vw;
+  height: 100vh;
+  object-fit: cover;
 }

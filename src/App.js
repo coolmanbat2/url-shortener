@@ -1,17 +1,19 @@
 import "./App.css";
 import Submit from "./components/submit/Submit";
-import forest from "./assets/forest.jpg" 
+import forest from "./assets/forest.jpg";
 
 function App() {
   return (
     <div className="App">
       <div className="urlShort">
         <div className="urlShortBox">
-          <h4>Simplify your links, enter your link here.</h4>
-          <form formAction="" className="urlLinkBox">
-            <input className="linkInput" />
-            <Submit />
-          </form>
+          <div className="centerText">
+            <h4>Simplify your links, enter your link here.</h4>
+            <form formAction="" className="urlLinkBox">
+              <input className="linkInput" />
+              <Submit />
+            </form>
+          </div>
         </div>
         <div className="urlExplain">
           <h3>
