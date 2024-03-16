@@ -7,13 +7,11 @@ function App() {
     <div className="App">
       <div className="urlShort">
         <div className="urlShortBox">
-          <div className="centerText">
-            <h4>Simplify your links, enter your link here.</h4>
-            <form formAction="" className="urlLinkBox">
-              <input className="linkInput" />
-              <Submit />
-            </form>
-          </div>
+          <h4>Simplify your links, enter your link here.</h4>
+          <form formAction="" className="urlLinkBox">
+            <input className="linkInput" />
+            <Submit />
+          </form>
         </div>
         <div className="urlExplain">
           <h3>

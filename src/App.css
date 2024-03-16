@@ -8,17 +8,21 @@
   background-color: #7aa66d;
 }
 
-.centerText {
-}
-
 .urlShortBox {
   grid-row-start: 1;
   grid-row-end: 2;
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
 
 .urlExplain {
   grid-row-start: 2;
   grid-row-end: 3;
+  display: grid;
+  margin-left: 9%;
+  margin-right: 9%;
+  align-content: center;
 }
 
 .picture {
