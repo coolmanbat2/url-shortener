@@ -39,26 +39,24 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .urlShortBox {
+    height: 25vh;
+  }
 
-.urlShortBox {
-  height: 25vh;
-}
+  .urlExplain {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    display: grid;
+    margin-left: 9%;
+    margin-right: 9%;
+    align-content: center;
+  }
 
-.urlExplain {
-  grid-row-start: 3;
-  grid-row-end: 3;
-  display: grid;
-  margin-left: 9%;
-  margin-right: 9%;
-  align-content: center;
-}
-
-.picture {
-  grid-row-start: 2;
-  grid-row-end: 3;
-  width: 100%;
-  height: 45vh;
-  object-fit: cover;
-}
-
+  .picture {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 100%;
+    height: 45vh;
+    object-fit: cover;
+  }
 }
