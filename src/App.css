@@ -38,6 +38,10 @@
   font-size: 1.7vh;
 }
 
+.linkInput {
+  background-color: white;
+}
+
 @media only screen and (max-width: 800px) {
   .urlShortBox {
     height: 25vh;
