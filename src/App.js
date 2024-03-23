@@ -1,7 +1,6 @@
 import "./App.css";
-import Submit from "./components/submit/Submit";
+import URLShortBox from "./components/submit/URLShortBox";
 import forest from "./assets/forest.jpg";
-import TextField from "@mui/material/TextField";
 
 function App() {
   return (
@@ -10,13 +9,7 @@ function App() {
         <div className="urlShortBox">
           <h4 className="header">Simplify your links, enter your link here.</h4>
           <form formAction="" className="urlLinkBox">
-            <TextField
-              fullWidth
-              className="linkInput"
-              label="Link"
-              variant="filled"
-            />
-            <Submit />
+            <URLShortBox />
           </form>
         </div>
         <div className="urlExplain">
