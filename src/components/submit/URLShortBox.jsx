@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import axios from "axios";
 
-const server = "http://localhost:8080/";
+export const server = "http://localhost:8080/";
 
 function URLShortBox() {
   const [shortCode, setShortCode] = useState("");
@@ -19,7 +19,6 @@ function URLShortBox() {
           originalLink: link,
         },
       });
-      console.log(response.data.shortURLCode);
       setShortCode(response.data.shortURLCode);
     } catch (error) {
       console.error(error);

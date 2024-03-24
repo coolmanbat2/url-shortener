@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import linkRedirectionLoader from './loaders/linkRedirectionLoader';
-import Random from './components/Random';
+import Random from "./components/Loading/Loading";
 import Error from './components/Error/Error';
 
 const router = createBrowserRouter([
@@ -15,8 +15,9 @@ const router = createBrowserRouter([
     errorElement: <Error/>,
   },
   {
-    path: ":urlShortCode",
-    element: <Random/>
+    path: ":code",
+    element: <Random/>,
+    loader: linkRedirectionLoader
   }
 ])
 
