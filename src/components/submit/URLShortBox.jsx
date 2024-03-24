@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
@@ -8,6 +9,7 @@ import axios from "axios";
 const server = "http://localhost:8080/";
 
 function URLShortBox() {
+  const [shortCode, setShortCode] = useState("");
   // Send over information that was given by the user to the server.
   async function sendInfo() {
     var link = document.getElementById("link").value;
@@ -17,38 +19,42 @@ function URLShortBox() {
           originalLink: link,
         },
       });
-      console.log(response);
+      console.log(response.data.shortURLCode);
+      setShortCode(response.data.shortURLCode);
     } catch (error) {
       console.error(error);
     }
   }
 
   return (
-    <Paper
-      component="form"
-      sx={{
-        p: "2px 4px",
-        display: "flex",
-        alignItems: "center",
-        width: 400,
-        borderRadius: 3,
-      }}
-    >
-      <InputBase
-        sx={{ ml: 1, flex: 1 }}
-        placeholder="https://www.google.ca/"
-        inputProps={{ "aria-label": "link" }}
-        id="link"
-      />
-      <IconButton
-        onClick={sendInfo}
-        type="button"
-        sx={{ p: "10px" }}
-        aria-label="submit"
+    <div>
+      <Paper
+        component="form"
+        sx={{
+          p: "2px 4px",
+          display: "flex",
+          alignItems: "center",
+          width: 400,
+          borderRadius: 3,
+        }}
       >
-        <ArrowForwardIcon />
-      </IconButton>
-    </Paper>
+        <InputBase
+          sx={{ ml: 1, flex: 1 }}
+          placeholder="google.ca/"
+          inputProps={{ "aria-label": "link" }}
+          id="link"
+        />
+        <IconButton
+          onClick={sendInfo}
+          type="button"
+          sx={{ p: "10px" }}
+          aria-label="submit"
+        >
+          <ArrowForwardIcon />
+        </IconButton>
+      </Paper>
+      <p>{shortCode}</p>
+    </div>
   );
 }
 
