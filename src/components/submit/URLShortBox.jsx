@@ -14,11 +14,9 @@ function URLShortBox() {
   async function sendInfo() {
     var link = document.getElementById("link").value;
     try {
-      const response = await axios.post(server + "add-url", {
-        data: {
-          originalLink: link,
-        },
-      });
+      const formData = axios.toFormData({ originalLink: link });
+      const response = await axios.post(server + "add-url", formData);
+      console.log(response.data.originalLink);
       setShortCode(response.data.shortURLCode);
     } catch (error) {
       console.error(error);
