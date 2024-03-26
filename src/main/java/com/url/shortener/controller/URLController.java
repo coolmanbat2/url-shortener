@@ -15,8 +15,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class URLController {
     URLService urlService;
-    //TODO: Please change this server link when pushing to prod, as the server will fail if server name is not changed.
     final String serverLink = "http://localhost:3000";
+
+    private void updateUrlWithHttps(URL url) {
+
+        if (!url.getOriginalLink().contains("http")) {
+            StringBuilder sb = new StringBuilder(url.getOriginalLink());
+            sb.insert(0, "https://");
+            url.setOriginalLink(sb.toString());
+        }
+    }
+
     @Autowired
     URLController(URLService urlService) {
        this.urlService = urlService;
@@ -26,12 +35,13 @@ public class URLController {
     @PostMapping("/add-url")
     public ResponseEntity<String> add(@ModelAttribute URL url) {
         try {
+            updateUrlWithHttps(url);
             URL exists = urlService.getURL(url);
-            if (exists != null) {
+            if (exists == null) {
                 String result = urlService.addURL(url);
                 return new ResponseEntity<>(result, HttpStatus.OK);
             } else {
-               return new ResponseEntity<>("Already exists in the system.", HttpStatus.CONFLICT);
+               return new ResponseEntity<>(exists.toString(), HttpStatus.CONFLICT);
             }
 
         } catch (Exception | CannotCreateLinkException e) {
