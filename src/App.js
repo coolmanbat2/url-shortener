@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <div className="urlShort">
         <div className="urlShortBox">
-          <h4 className="header">Simplify your links, enter your link here.</h4>
+          <h4 className="title header">Simplify your links, enter your link here.</h4>
           <form formAction="" className="urlLinkBox">
             <URLShortBox />
           </form>

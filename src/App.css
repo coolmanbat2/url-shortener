@@ -1,5 +1,13 @@
 body {
-  background-image: url("./assets/nature.jpg")
+  background-image: url("./assets/nature.png");
+  background-color: black;
+  color: white;
+}
+
+.lineBreaker { 
+  border-left: thick solid white;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .App {
@@ -7,9 +15,6 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
-  /* color of text */
-  color: white;
 }
 
 .urlShort {
@@ -23,10 +28,6 @@ body {
   grid-column-start: 1;
   justify-content: center;
   align-content: center;
-}
-
-.lineBreaker {
-
 }
 
 .urlExplain {
@@ -43,6 +44,11 @@ body {
 
 .header {
   font-size: 1.7vh;
+}
+
+.title {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .linkInput {

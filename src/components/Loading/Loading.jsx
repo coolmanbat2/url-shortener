@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData} from "react-router-dom";
 import { useEffect } from "react"
 import loader from "../../assets/fidget-spinner.svg"
 import "./Loading.css"
@@ -10,7 +10,7 @@ function Loading() {
   })
   return (
     <div className="loader">
-        Loading...
+        <h2>Loading...</h2>
         <img src={loader} alt="loading"/>
     </div>
   )
