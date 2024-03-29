@@ -1,6 +1,5 @@
 import "./App.css";
 import URLShortBox from "./components/submit/URLShortBox";
-import forest from "./assets/forest.jpg";
 
 function App() {
   return (
@@ -12,6 +11,7 @@ function App() {
             <URLShortBox />
           </form>
         </div>
+        <div className="lineBreaker"/>
         <div className="urlExplain">
           <h4 className="header">
             Better be on the toilet then not be on the toilet and have to go
@@ -29,7 +29,6 @@ function App() {
             world will truly feel from there.
           </p>
         </div>
-        <img className="picture" src={forest} alt="forest"></img>
       </div>
     </div>
   );

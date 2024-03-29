@@ -1,3 +1,17 @@
+body {
+  background-image: url("./assets/nature.jpg")
+}
+
+.App {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  /* color of text */
+  color: white;
+}
+
 .urlShort {
   display: grid;
   align-content: space-between;
@@ -5,29 +19,22 @@
 }
 
 .urlShortBox {
-  background-color: #7aa66d;
-  grid-row-start: 1;
-  grid-row-end: 2;
   display: grid;
+  grid-column-start: 1;
   justify-content: center;
   align-content: center;
 }
 
+.lineBreaker {
+
+}
+
 .urlExplain {
-  grid-row-start: 2;
-  grid-row-end: 3;
   display: grid;
+  grid-column-start: 3;
   margin-left: 9%;
   margin-right: 9%;
   align-content: center;
-}
-
-.picture {
-  grid-row-start: 1;
-  grid-row-end: 3;
-  width: 65vw;
-  height: 100vh;
-  object-fit: cover;
 }
 
 .bodyText {
@@ -43,24 +50,4 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .urlShortBox {
-    height: 25vh;
-  }
-
-  .urlExplain {
-    grid-row-start: 3;
-    grid-row-end: 3;
-    display: grid;
-    margin-left: 9%;
-    margin-right: 9%;
-    align-content: center;
-  }
-
-  .picture {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-  }
 }
