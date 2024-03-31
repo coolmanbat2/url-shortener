@@ -1,17 +1,17 @@
 import "./App.css";
 import URLShortBox from "./components/submit/URLShortBox";
-import forest from "./assets/forest.jpg";
 
 function App() {
   return (
     <div className="App">
       <div className="urlShort">
         <div className="urlShortBox">
-          <h4 className="header">Simplify your links, enter your link here.</h4>
+          <h4 className="title header">Simplify your links, enter your link here.</h4>
           <form formAction="" className="urlLinkBox">
             <URLShortBox />
           </form>
         </div>
+        <div className="lineBreaker"/>
         <div className="urlExplain">
           <h4 className="header">
             Better be on the toilet then not be on the toilet and have to go
@@ -29,7 +29,6 @@ function App() {
             world will truly feel from there.
           </p>
         </div>
-        <img className="picture" src={forest} alt="forest"></img>
       </div>
     </div>
   );

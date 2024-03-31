@@ -9,7 +9,8 @@ import axios from "axios";
 export const server = "http://localhost:8080/";
 
 function URLShortBox() {
-  const [shortCode, setShortCode] = useState("");
+  const [shortCodeLink, setShortCodeLink] = useState("");
+  const webDomain = "http://localhost:3000/"
   // Send over information that was given by the user to the server.
   async function sendInfo() {
     var link = document.getElementById("link").value;
@@ -17,7 +18,7 @@ function URLShortBox() {
       const formData = axios.toFormData({ originalLink: link });
       const response = await axios.post(server + "add-url", formData);
       console.log(response.data.originalLink);
-      setShortCode(response.data.shortURLCode);
+      setShortCodeLink(webDomain + response.data.shortURLCode);
     } catch (error) {
       console.error(error);
     }
@@ -31,8 +32,10 @@ function URLShortBox() {
           p: "2px 4px",
           display: "flex",
           alignItems: "center",
-          width: 400,
+          width: 305,
           borderRadius: 3,
+          marginRight: 10,
+          marginLeft: 10 
         }}
       >
         <InputBase
@@ -50,7 +53,7 @@ function URLShortBox() {
           <ArrowForwardIcon />
         </IconButton>
       </Paper>
-      <p>{shortCode}</p>
+      <p className="title">{shortCodeLink}</p>
     </div>
   );
 }
