@@ -5,14 +5,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.url.shortener.exceptions.CannotCreateLinkException;
 import com.url.shortener.models.URL;
 import com.url.shortener.repositories.URLRepo;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Random;
 
-
+@Transactional
 @Service
 public class URLService {
 
@@ -52,14 +54,31 @@ public class URLService {
         }
     }
 
+
     public String addURL(@ModelAttribute URL url) throws CannotCreateLinkException, JsonProcessingException {
+
         ObjectMapper objectMapper = new ObjectMapper();
-        String unq = genUnqCode();
+        // check if link exists in database already.
+        if (!urlRepo.existsByOriginalLink(url.getOriginalLink())) {
+            String unq = genUnqCode();
 
-        // add the unique code to the database.
-        url.setShortURLCode(unq);
+            // add the unique code to the database.
+            url.setShortURLCode(unq);
+            return objectMapper.writeValueAsString(urlRepo.saveAndFlush(url));
+        } else {
 
-        return objectMapper.writeValueAsString(urlRepo.saveAndFlush(url));
+            // Rebuilding the JSON Object to be returned to the controller.
+            URL origObj = urlRepo.findByOriginalLink(url.getOriginalLink());
+            HashMap<String, String> jsonObj = new HashMap<>();
+            jsonObj.put("urlId", origObj.getUrlId().toString());
+            jsonObj.put("originalLink", origObj.getOriginalLink());
+            jsonObj.put("shortURLCode", origObj.getShortURLCode());
+
+            return objectMapper.writeValueAsString(jsonObj);
+
+        }
+
+
     }
 
     public URL getURL(@ModelAttribute URL url) {

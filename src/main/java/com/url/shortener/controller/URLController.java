@@ -36,13 +36,8 @@ public class URLController {
     public ResponseEntity<String> add(@ModelAttribute URL url) {
         try {
             updateUrlWithHttps(url);
-            URL exists = urlService.getURL(url);
-            if (exists == null) {
-                String result = urlService.addURL(url);
-                return new ResponseEntity<>(result, HttpStatus.OK);
-            } else {
-               return new ResponseEntity<>(exists.toString(), HttpStatus.CONFLICT);
-            }
+            String result = urlService.addURL(url);
+            return new ResponseEntity<>(result, HttpStatus.OK);
 
         } catch (Exception | CannotCreateLinkException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
