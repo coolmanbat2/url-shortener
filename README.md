@@ -1,8 +1,4 @@
-Certainly! Below is a basic template for creating documentation for a project to be hosted on GitHub:
-
----
-
-# Project Name
+# URL Shortener
 
 ## Description
 
@@ -38,11 +34,3 @@ $ node app.js
 ## Contributing
 
 Explain how others can contribute to the project. Include guidelines for code style, pull request procedures, and any other relevant information.
-
-## License
-
-Specify the license under which the project is distributed.
-
----
-
-You can customize this template to fit the specific needs and structure of your project. Additionally, you may want to include sections such as "Documentation", "Examples", or "FAQ" depending on the complexity and requirements of your project.
