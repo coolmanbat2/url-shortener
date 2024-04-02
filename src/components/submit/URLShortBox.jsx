@@ -18,16 +18,23 @@ function URLShortBox() {
       const formData = axios.toFormData({ originalLink: link });
       const response = await axios.post(server + "add-url", formData);
       console.log(response.data.originalLink);
-      setShortCodeLink(webDomain + response.data.shortURLCode);
+      const result = webDomain + response.data.shortURLCode;
+      setShortCodeLink(result);
+      // This part is where the user will be redirected to the link automatically. 
+      // You can remove this part if the user is not interested in it.
+      // window.location.href = result;
     } catch (error) {
       console.error(error);
     }
   }
 
+
+
   return (
     <div>
       <Paper
         component="form"
+        action="javascript:void(0);"
         sx={{
           p: "2px 4px",
           display: "flex",
@@ -46,7 +53,7 @@ function URLShortBox() {
         />
         <IconButton
           onClick={sendInfo}
-          type="button"
+          type="submit"
           sx={{ p: "10px" }}
           aria-label="submit"
         >
